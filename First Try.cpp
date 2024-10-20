@@ -94,11 +94,16 @@ string Tabs(int NumOfTabs)
     return Tabs;
 }
 
-void DisplayMenu()
+void DisplayHeader(string HeaderText)
 {
     cout << "********************************" << endl;
-    cout << Tabs(2) << "Main Screen" << endl;
+    cout << Tabs(2) << HeaderText << endl;
     cout << "********************************" << endl;
+}
+
+void DisplayMenu()
+{
+    DisplayHeader("Main Screen");
     cout << Tabs(1) << "[1] Show Clients List." << endl;
     cout << Tabs(1) << "[2] Add New Client." << endl;
     cout << Tabs(1) << "[3] Delete Client." << endl;
@@ -109,18 +114,11 @@ void DisplayMenu()
     cout << "********************************" << endl;
 }
 
-void DisplayHeader(string HeaderText)
-{
-    cout << "********************************" << endl;
-    cout << Tabs(2) << HeaderText << endl;
-    cout << "********************************" << endl;
-}
+
 
 void DisplayTransMenu()
 {
-    cout << "********************************" << endl;
-    cout << Tabs(2) << "Transactions Screen" << endl;
-    cout << "********************************" << endl;
+    DisplayHeader("Transactions Screen");
     cout << Tabs(1) << "[1] Deposit." << endl;
     cout << Tabs(1) << "[2] Withdraw." << endl;
     cout << Tabs(1) << "[3] Total Balances." << endl;
@@ -293,7 +291,7 @@ void ShowClientsList(vector <stClient> vClients)
 
 void ShowBalancesList(vector <stClient> vClients)
 {
-    cout << "\n\t\t\t\t\Balances List (" << vClients.size() << ") Client(s).";
+    cout << "\n\t\t\t\tBalances List (" << vClients.size() << ") Client(s).";
     cout << "\n_______________________________________________________";
     cout << "_________________________________________\n" << endl;
     cout << "| " << left << setw(15) << "Accout Number";
