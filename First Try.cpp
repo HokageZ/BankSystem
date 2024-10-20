@@ -32,7 +32,7 @@ int GetChoice(string Message, int from, int to)
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             cout << "Pls Input a Numerical Value!\n";
         }
-        else if (choice > 6 || choice < 1)
+        else if (choice > to || choice < from)
             cout << "Pls Input a Number between " << from << " and " << to << endl;
 
     } while (choice > to || choice < from);
